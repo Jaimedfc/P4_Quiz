@@ -124,14 +124,15 @@ exports.playCmd = rl => {
                     if (answer.toLowerCase().trim() === quiz.answer.toLowerCase().trim()){
                         log("Su respuesta es correcta.");
                         biglog("CORRECTA","green");
-                        log(`Ha conseguido ${colorize(score+1,'green')} punto(s) hasta el momento`);
+                        log(`Ha conseguido ${colorize(score+1,'green')} punto(s) hasta el momento.`);
                         score++;
                         playOne();
                     }
                     else{
                         log("Su respuesta es incorrecta.");
                         biglog("INCORRECTA","red");
-                        log(`Ha conseguido un total de ${colorize(score,'green')} puntos`);
+                        log("Fin del juego.")
+                        log(`Ha conseguido un total de ${colorize(score,'green')} puntos.`);
                         rl.prompt();
                     }
 
