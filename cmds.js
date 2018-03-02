@@ -78,12 +78,12 @@ exports.testCmd = (rl, id) => {
 			rl.question(`${quiz.question} ${colorize(" => ", "magenta")}`, answer => {	
 				
 				if (answer.toLowerCase().trim() === quiz.answer.toLowerCase().trim()){
-					log("Su respuesta es:");
+					log("Su respuesta es correcta.");
 					biglog("CORRECTA","green");
 					rl.prompt();
 					}
 				else{
-					log("Su respuesta es:");
+					log("Su respuesta es incorrecta.");
 					biglog("INCORRECTA","red");
 					rl.prompt();
 					}
@@ -122,14 +122,14 @@ exports.playCmd = rl => {
                 rl.question(`${quiz.question} ${colorize(" => ", "magenta")}`, answer => {
 
                     if (answer.toLowerCase().trim() === quiz.answer.toLowerCase().trim()){
-                        log("Su respuesta es:");
+                        log("Su respuesta es correcta.");
                         biglog("CORRECTA","green");
                         log(`Ha conseguido ${colorize(score+1,'green')} punto(s) hasta el momento`);
                         score++;
                         playOne();
                     }
                     else{
-                        log("Su respuesta es:");
+                        log("Su respuesta es incorrecta.");
                         biglog("INCORRECTA","red");
                         log(`Ha conseguido un total de ${colorize(score,'green')} puntos`);
                         rl.prompt();
