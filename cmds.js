@@ -30,8 +30,10 @@ const makeQuestion = (rl, text) => {
 };
 
 exports.quitCmd = rl => {
-	return new Sequelize.Promise(() => {
+	return new Sequelize.Promise((resolve, reject) => {
         rl.close();
+        resolve();
+        return;
 	});
 
 };
@@ -289,9 +291,11 @@ exports.editCmd = (rl, id) => {
 
 
 exports.creditsCmd = rl => {
-	return new Sequelize.Promise(() => {
+	return new Sequelize.Promise((resolve, reject) => {
         log('Autor de la practica:');
         log('Jaime de Frutos Cerezo','green');
+        resolve();
+        return;
 	})
 	.then(() => {
         rl.prompt();
