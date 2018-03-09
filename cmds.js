@@ -223,7 +223,7 @@ exports.playCmd = rl => {
                                 log(` Ha conseguido un total de ${colorize(score, 'magenta')} puntos`);
                                 resolve();
                                 return;
-                            
+
                         }
 
                     });
